@@ -1,0 +1,25 @@
+{
+ "type": "zpop.operator_claim",
+ "version": 1,
+ "operator": {
+  "name": "Lab Example Operator (demonstration identity)",
+  "public_key": "72e46b53146a01619ad2fbf18b7e2f5df2617bffca7edc507e900c085806d4d3"
+ },
+ "network": "mainnet",
+ "window": {
+  "start_height": 3538694,
+  "end_height": 3539842
+ },
+ "payout_addresses": [
+  "t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U"
+ ],
+ "control_proofs": [
+  {
+   "address": "t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U",
+   "message": "ZPOP control proof v1\noperator: Lab Example Operator (demonstration identity)\naddress: t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U\nnetwork: mainnet\nstatement: This address is a payout address of the operator named above.",
+   "signature_b64": "Hyaj7tONGPTmTvOAyIRJnFJ50XUpWAxiRsWnFQ4EhIXjQNAVrbnZvMjoEG+ByPQTlbnurTaB8pCFosWD8K2cQ+M="
+  }
+ ],
+ "claim_sha256": "d5e8e31638206f12f9c7212159295167b117573ba010d9c1cbe035f1f8114321",
+ "signature": "56e613010b89a21e0a3eb233ef0e0e554ba2111035a32ddeb62535a81f861d467a8309f89b1a40ebedc4738fbab1bba4dfbffe7b08d2bbb0e724f0872e141509"
+}

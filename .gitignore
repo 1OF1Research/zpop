@@ -1,0 +1,5 @@
+# Key material is never committed. Demonstration keys are lab-only.
+keys/
+.venv/
+__pycache__/
+*.pyc

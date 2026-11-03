@@ -1,0 +1,158 @@
+{
+ "type": "zpop.receipt",
+ "version": 1,
+ "kind": "network_window",
+ "issuer": {
+  "name": "Agent Embassy",
+  "public_key": "41d01adb30cff00b6daa7db8b52311471942c167e5414a3229acdc8a21efd664"
+ },
+ "issued_at": "2026-11-03T23:50:59Z",
+ "facts": {
+  "network": "mainnet",
+  "day_utc": "2026-11-02",
+  "aggregates": {
+   "start_height": 3538694,
+   "end_height": 3539842,
+   "blocks": 1149,
+   "first_time": 1793577609,
+   "last_time": 1793663958,
+   "duration_s": 86349,
+   "total_subsidy_zats": 179531250000,
+   "total_fees_zats": 240764949,
+   "total_coinbase_zats": 158228264949,
+   "miner_base_total_zats": 143625000000,
+   "zcg_stream_total_zats": 14362500000,
+   "lockbox_accrual_zats": 21543750000,
+   "negative_fee_blocks": [],
+   "shielded_coinbase_blocks": 71,
+   "shielded_coinbase_value_zats": 8887851593,
+   "stream_address": "t3cFfPt1Bcvgez9ZbMBFWeZsskxTkPzGCow",
+   "stream_script_hex": "a914c20cd5bdf7964ca61764db66bc2531b1792a084d87",
+   "stream_coverage_blocks": 1149,
+   "distinct_miner_addresses": 17,
+   "top_miner_addresses": [
+    {
+     "address": "t1MKn34KBa8Xh4g8qU8psibBXvURafphVn7",
+     "zats": 41528014897,
+     "blocks": 332,
+     "share_pct": 23.131
+    },
+    {
+     "address": "t1SqwRAAdSig6dE4EBPLonAait219VmkUjP",
+     "zats": 24656548117,
+     "blocks": 197,
+     "share_pct": 13.734
+    },
+    {
+     "address": "t1PEp2GJLSdhDfCKqc2J211WKDUS1NfoQNy",
+     "zats": 23033624529,
+     "blocks": 184,
+     "share_pct": 12.83
+    },
+    {
+     "address": "t1TVdjqU1APVQmCRRnzbqfjz6wR2qtBnnoc",
+     "zats": 17772815037,
+     "blocks": 142,
+     "share_pct": 9.9
+    },
+    {
+     "address": "t1SEgZvXCu3ceE42qrq5pCeSq7HbLjX8NJv",
+     "zats": 7590147552,
+     "blocks": 60,
+     "share_pct": 4.228
+    },
+    {
+     "address": "t1L2b66MXbgpVMXDfUa94GCBFAN4dCxGohM",
+     "zats": 7507641406,
+     "blocks": 60,
+     "share_pct": 4.182
+    },
+    {
+     "address": "t1VTjv7XF3hYqxQkxKmHHErvus3bDrbbkGg",
+     "zats": 5754731454,
+     "blocks": 46,
+     "share_pct": 3.205
+    },
+    {
+     "address": "t1e6hceYHkzCbwcwGZzKeMfXXW7x7gr19Cw",
+     "zats": 1502486550,
+     "blocks": 12,
+     "share_pct": 0.837
+    },
+    {
+     "address": "t1fpcZ2Dbwn4oj35oWBTUhtmUciSq7HG7LU",
+     "zats": 1500873256,
+     "blocks": 12,
+     "share_pct": 0.836
+    },
+    {
+     "address": "t1Y2tYgDJnH4m1uQPDXxvXQSh1Jbun3AP22",
+     "zats": 1377495870,
+     "blocks": 11,
+     "share_pct": 0.767
+    }
+   ],
+   "total_txs": 9609,
+   "sapling_components": 616,
+   "orchard_actions": 160,
+   "ironwood_actions": 12731
+  },
+  "blockchair": {
+   "source": "blockchair.com keyless API",
+   "indexed_state_at_check": 3540979,
+   "hash_time_txcount_agreement": {
+    "3538694": {
+     "hash": true,
+     "time": true,
+     "tx_count": true
+    },
+    "3539268": {
+     "hash": true,
+     "time": true,
+     "tx_count": true
+    },
+    "3539842": {
+     "hash": true,
+     "time": true,
+     "tx_count": true
+    }
+   },
+   "chainwork_delta": 2677376594245028,
+   "chainwork_span_s": 86383,
+   "avg_solps": 30994253432.33076,
+   "difficulty_samples": {
+    "3538694": 262954059.5196556,
+    "3539268": 247421345.2502602,
+    "3539842": 302773129.1497033
+   },
+   "lockbox_pool_before_zats": 7355512500000,
+   "lockbox_pool_after_zats": 7377056250000,
+   "lockbox_pool_delta_zats": 21543750000,
+   "coinbase_total_page_check": {
+    "checked": 100,
+    "agree": 97,
+    "disagreeing_heights": [
+     3539789,
+     3539782,
+     3539768
+    ],
+    "known_cause": "Blockchair's reward field counts transparent coinbase outputs only; every disagreeing height in the reference window is a shielded-coinbase block, where the consensus identity (subsidy + fees) confirms the zpop total."
+   }
+  }
+ },
+ "evidence": {
+  "dataset_sha256": "836c2f442f7250c681a7c8e10cf7c8484776c04b20033a51c38ae3b06b9892c8",
+  "dataset_blocks": 1149,
+  "lwd_endpoint": "zec.rocks:443",
+  "lwd_info": {
+   "version": "v0.6.1",
+   "vendor": "ECC LightWalletD",
+   "chain": "main",
+   "height": 3540979,
+   "branch": "37a5165b"
+  }
+ },
+ "prev_receipt": null,
+ "receipt_sha256": "a225bd65d478df52413d90308030336e148571ef9f7e5b3fa739acd248f3b5f0",
+ "signature": "875a4fa31cb26b6335bad10289f319956fa2fa715b6e39f766583689ce3a2b381deb6ba6d28f3b0ef947ae70b763a29d1110c9969b9e226649964395d6b29008"
+}

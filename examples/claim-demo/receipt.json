@@ -1,0 +1,67 @@
+{
+ "type": "zpop.receipt",
+ "version": 1,
+ "kind": "operator_production",
+ "issuer": {
+  "name": "Agent Embassy",
+  "public_key": "41d01adb30cff00b6daa7db8b52311471942c167e5414a3229acdc8a21efd664"
+ },
+ "issued_at": "2026-11-03T23:51:02Z",
+ "facts": {
+  "claim_sha256": "d5e8e31638206f12f9c7212159295167b117573ba010d9c1cbe035f1f8114321",
+  "operator": {
+   "name": "Lab Example Operator (demonstration identity)",
+   "public_key": "72e46b53146a01619ad2fbf18b7e2f5df2617bffca7edc507e900c085806d4d3"
+  },
+  "network": "mainnet",
+  "window": {
+   "start_height": 3538694,
+   "end_height": 3539842
+  },
+  "payout_addresses": [
+   "t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U"
+  ],
+  "control_proofs_verified": true,
+  "measured": {
+   "per_address": {
+    "t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U": {
+     "zats": 0,
+     "blocks": 0
+    }
+   },
+   "total_zats": 0,
+   "total_blocks": 0,
+   "share_pct": 0.0
+  }
+ },
+ "evidence": {
+  "claim": {
+   "type": "zpop.operator_claim",
+   "version": 1,
+   "operator": {
+    "name": "Lab Example Operator (demonstration identity)",
+    "public_key": "72e46b53146a01619ad2fbf18b7e2f5df2617bffca7edc507e900c085806d4d3"
+   },
+   "network": "mainnet",
+   "window": {
+    "start_height": 3538694,
+    "end_height": 3539842
+   },
+   "payout_addresses": [
+    "t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U"
+   ],
+   "control_proofs": [
+    {
+     "address": "t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U",
+     "message": "ZPOP control proof v1\noperator: Lab Example Operator (demonstration identity)\naddress: t1awYYwzYFvyUhpYQu2UWYXLvHp9sJcL33U\nnetwork: mainnet\nstatement: This address is a payout address of the operator named above.",
+     "signature_b64": "Hyaj7tONGPTmTvOAyIRJnFJ50XUpWAxiRsWnFQ4EhIXjQNAVrbnZvMjoEG+ByPQTlbnurTaB8pCFosWD8K2cQ+M="
+    }
+   ],
+   "claim_sha256": "d5e8e31638206f12f9c7212159295167b117573ba010d9c1cbe035f1f8114321",
+   "signature": "56e613010b89a21e0a3eb233ef0e0e554ba2111035a32ddeb62535a81f861d467a8309f89b1a40ebedc4738fbab1bba4dfbffe7b08d2bbb0e724f0872e141509"
+  }
+ },
+ "prev_receipt": "1de3f6ed6e6390fb89d78b9c4b40df73dac52f5c2ce337a67462db3d1254b583",
+ "receipt_sha256": "e80d095c81cf0382576dc07449d6da5e1815022cd7ab5b8e282144dfec6f4fd7",
+ "signature": "e5d34cfe686c46e5a4e154ec4ee1f63352c6cd58051b86abcb44449b0c44d279c69affbbbf94cdd00024fb3dff410df0f7445a9db4674dfb6f545bfa0e27f60a"
+}

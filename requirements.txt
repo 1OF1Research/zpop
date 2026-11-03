@@ -1,0 +1,4 @@
+# Tested on Python 3.12 with these exact versions.
+# Everything else in zpop is pure standard library.
+grpcio==1.85.1
+protobuf==7.36.2
