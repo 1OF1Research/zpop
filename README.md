@@ -127,6 +127,39 @@ a clearly labelled lab identity whose fresh address honestly measures
   third-party dependencies are grpcio/protobuf for the lightwalletd
   protocol.
 
+### A receipt core, with claim families
+
+The receipt machinery is deliberately vertical-neutral. A receipt is five
+parts - an **anchor** (the public evidence the facts were re-derived
+from), a **claim** (what the issuer asserts over a closed window), the
+**evidence** (the facts themselves), an Ed25519 **signature** by the
+issuer, and a **chain** link to the previous receipt's hash. Nothing in
+`receipts.py` or in the claim format knows what kind of operation is
+being proven; a claim family is the part that knows - it defines what
+counts as ground truth, where the anchor lives, and how an operator
+proves control of the thing it is claiming.
+
+Zcash mining production is the first claim family, and it is first for
+one reason: its anchor is a public ledger, so ground truth is free and
+incorruptible and any stranger can re-derive every fact without the
+operator's permission. The families named next, each with the public
+anchor it would use:
+
+- **AI compute delivery** - GPU-hours and jobs completed, proven against
+  signed job manifests anchored to a public timestamping ledger, with
+  the buyer's countersignature as the control proof.
+- **Energy mix** - power drawn and its source mix hour by hour, proven
+  against meter readings anchored to the grid operator's published
+  settlement data and granular energy certificates.
+- **SLA uptime** - availability against a contracted level, proven
+  against independent third-party probe networks whose signed
+  observations are the anchor.
+
+In every family the same rule holds: the receipt is worth exactly what
+its anchor is worth, and the receipt says which anchor it stands on.
+Families whose anchors are operator-supplied are labelled as such -
+the format never lets a weaker anchor borrow a stronger one's name.
+
 ## Layout
 
 - `zpop/` — the package (`chain`, `window`, `claims`, `receipts`, `txp`,
