@@ -27,11 +27,17 @@ def facts_from_compact(lwd, blks):
 def aggregates_from_facts(facts):
     n = len(facts)
     start = facts[0]["height"]
-    miner_due, zcg_due, lock_due = funding_streams(start)
+    # Funding dues are taken per block, not once from the window's first
+    # height: a window that crosses a schedule boundary (e.g. the NU7
+    # activation day, 2026-11-06) must score each block at its own height's
+    # rates. Single-era windows are unaffected.
     stream_votes = collections.Counter()
+    miner_base_total = zcg_stream_total = lockbox_accrual = 0
     for f in facts:
+        m_due, z_due, l_due = funding_streams(f["height"])
+        miner_base_total += m_due; zcg_stream_total += z_due; lockbox_accrual += l_due
         for o in f["coinbase_outputs"]:
-            if o["value"] == zcg_due:
+            if o["value"] == z_due:
                 stream_votes[(o["script_hex"], o["address"])] += 1
     (script, saddr), scov = stream_votes.most_common(1)[0]
     per_addr = collections.Counter(); blocks_by_addr = collections.Counter()
@@ -52,9 +58,9 @@ def aggregates_from_facts(facts):
         "total_subsidy_zats": tot_subsidy,
         "total_fees_zats": sum(f["fees_zats"] for f in facts),
         "total_coinbase_zats": sum(f["coinbase_total"] for f in facts),
-        "miner_base_total_zats": miner_due * n,
-        "zcg_stream_total_zats": zcg_due * n,
-        "lockbox_accrual_zats": lock_due * n,
+        "miner_base_total_zats": miner_base_total,
+        "zcg_stream_total_zats": zcg_stream_total,
+        "lockbox_accrual_zats": lockbox_accrual,
         "negative_fee_blocks": [f["height"] for f in facts if f["fees_zats"] < 0],
         "shielded_coinbase_blocks": sum(1 for f in facts if f["coinbase_has_shielded"]),
         "shielded_coinbase_value_zats": sum(f["coinbase_shielded_received_zats"] for f in facts),

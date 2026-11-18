@@ -11,9 +11,44 @@ from .window import facts_from_compact, aggregates_from_facts, blockchair_checks
 def _load_seed(path):
     with open(path) as f: return bytes.fromhex(f.read().strip())
 
+def _prev_hash(prev):
+    """Resolve a --prev argument to the previous receipt's hash.
+
+    Accepts a receipt hash (64 hex chars) or a path to a receipt JSON file.
+    Anything else is an error: storing the argument itself as the chain link
+    silently breaks verification (found 2026-11-17, when a file path was
+    passed and landed verbatim in prev_receipt)."""
+    if prev is None: return None
+    if os.path.isfile(prev):
+        with open(prev) as f: return json.load(f)["receipt_sha256"]
+    if len(prev) == 64 and all(c in "0123456789abcdef" for c in prev.lower()):
+        return prev.lower()
+    raise SystemExit(f"--prev must be a receipt hash or a receipt file path, got: {prev!r}")
+
 def _save(path, obj, mode=0o644):
-    with open(path, "w") as f: json.dump(obj, f, indent=1)
-    os.chmod(path, mode)
+    """Write JSON via a temp file + rename, retrying transient write refusals.
+
+    A direct open(path, "w") truncates the target before the payload lands;
+    if the write is then refused (seen on sandboxed hosts whose write
+    admission drops content writes in phases), the previous good file is
+    destroyed and an empty one remains. Temp + rename keeps the old file
+    intact until the new one is fully on disk."""
+    import time
+    tmp = path + ".tmp"
+    data = json.dumps(obj, indent=1)
+    delay = 5
+    for attempt in range(10):
+        try:
+            with open(tmp, "w") as f:
+                f.write(data); f.flush(); os.fsync(f.fileno())
+            if os.path.getsize(tmp) != len(data.encode()):
+                raise OSError("short write")
+            os.replace(tmp, path)
+            os.chmod(path, mode)
+            return
+        except OSError:
+            if attempt == 9: raise
+            time.sleep(delay); delay = min(delay * 2, 30)
 
 def cmd_keygen(a):
     seed = secrets.token_bytes(32)
@@ -47,7 +82,7 @@ def cmd_window(a):
     ds_hash = sha256_hex(open(ds_path, "rb").read())
     r = issue("network_window",
               {"network": a.network, "day_utc": a.day, "aggregates": agg, "blockchair": bc},
-              a.issuer_name, _load_seed(a.issuer_seed), a.prev,
+              a.issuer_name, _load_seed(a.issuer_seed), _prev_hash(a.prev),
               evidence={"dataset_sha256": ds_hash, "dataset_blocks": len(facts),
                         "lwd_endpoint": a.endpoint, "lwd_info": info})
     _save(os.path.join(a.outdir, "receipt.json"), r)
@@ -88,7 +123,7 @@ def _pay_facts(lwd, txid):
 def cmd_pay(a):
     lwd = Lightwalletd(a.endpoint)
     facts, raw = _pay_facts(lwd, a.txid)
-    r = issue("shielded_payment", facts, a.issuer_name, _load_seed(a.issuer_seed), a.prev,
+    r = issue("shielded_payment", facts, a.issuer_name, _load_seed(a.issuer_seed), _prev_hash(a.prev),
               evidence={"raw_tx_hex": raw.hex(), "lwd_endpoint": a.endpoint})
     _save(a.out, r)
     print(f"payment receipt for {a.txid} at height {facts['height']}: sha256 {r['receipt_sha256']}")
@@ -122,7 +157,7 @@ def cmd_claim_receipt(a):
                "network": claim["network"], "window": w,
                "payout_addresses": claim["payout_addresses"],
                "control_proofs_verified": True, "measured": measured},
-              a.issuer_name, _load_seed(a.issuer_seed), a.prev,
+              a.issuer_name, _load_seed(a.issuer_seed), _prev_hash(a.prev),
               evidence={"claim": claim})
     _save(a.out, r)
     print(f"operator production receipt: {r['receipt_sha256']} measured {measured}")

@@ -1,0 +1,154 @@
+{
+ "type": "zpop.receipt",
+ "version": 1,
+ "kind": "network_window",
+ "issuer": {
+  "name": "Agent Embassy",
+  "public_key": "d2c758eb3bfcd07636d7aa5db1d87c04d489d4b585705eba4a524ed9e97e1601"
+ },
+ "issued_at": "2026-11-18T02:54:30Z",
+ "facts": {
+  "network": "mainnet",
+  "day_utc": "2026-11-15",
+  "aggregates": {
+   "start_height": 3573972,
+   "end_height": 3577423,
+   "blocks": 3452,
+   "first_time": 1794700839,
+   "last_time": 1794787196,
+   "duration_s": 86357,
+   "total_subsidy_zats": 179791665516,
+   "total_fees_zats": 50775004,
+   "total_coinbase_zats": 158267443972,
+   "miner_base_total_zats": 143833337936,
+   "zcg_stream_total_zats": 14383331032,
+   "lockbox_accrual_zats": 21574996548,
+   "negative_fee_blocks": [],
+   "shielded_coinbase_blocks": 221,
+   "shielded_coinbase_value_zats": 9212471423,
+   "stream_address": "t3cFfPt1Bcvgez9ZbMBFWeZsskxTkPzGCow",
+   "stream_script_hex": "a914c20cd5bdf7964ca61764db66bc2531b1792a084d87",
+   "stream_coverage_blocks": 3452,
+   "distinct_miner_addresses": 21,
+   "top_miner_addresses": [
+    {
+     "address": "t1MKn34KBa8Xh4g8qU8psibBXvURafphVn7",
+     "zats": 25836817491,
+     "blocks": 620,
+     "share_pct": 14.37
+    },
+    {
+     "address": "t1SqwRAAdSig6dE4EBPLonAait219VmkUjP",
+     "zats": 25261514977,
+     "blocks": 606,
+     "share_pct": 14.05
+    },
+    {
+     "address": "t1PEp2GJLSdhDfCKqc2J211WKDUS1NfoQNy",
+     "zats": 22510504381,
+     "blocks": 540,
+     "share_pct": 12.52
+    },
+    {
+     "address": "t1SEgZvXCu3ceE42qrq5pCeSq7HbLjX8NJv",
+     "zats": 19460876914,
+     "blocks": 467,
+     "share_pct": 10.824
+    },
+    {
+     "address": "t1TVdjqU1APVQmCRRnzbqfjz6wR2qtBnnoc",
+     "zats": 18261285106,
+     "blocks": 438,
+     "share_pct": 10.157
+    },
+    {
+     "address": "t1L2b66MXbgpVMXDfUa94GCBFAN4dCxGohM",
+     "zats": 8461537193,
+     "blocks": 203,
+     "share_pct": 4.706
+    },
+    {
+     "address": "t1VTjv7XF3hYqxQkxKmHHErvus3bDrbbkGg",
+     "zats": 7209752407,
+     "blocks": 173,
+     "share_pct": 4.01
+    },
+    {
+     "address": "t1Y2tYgDJnH4m1uQPDXxvXQSh1Jbun3AP22",
+     "zats": 2501269793,
+     "blocks": 60,
+     "share_pct": 1.391
+    },
+    {
+     "address": "t1Na7ykQ6vE4CbxBPuUDUQx5n6aEWXu1VQq",
+     "zats": 1375021672,
+     "blocks": 33,
+     "share_pct": 0.765
+    },
+    {
+     "address": "t1e6hceYHkzCbwcwGZzKeMfXXW7x7gr19Cw",
+     "zats": 916884655,
+     "blocks": 22,
+     "share_pct": 0.51
+    }
+   ],
+   "total_txs": 8604,
+   "sapling_components": 684,
+   "orchard_actions": 129,
+   "ironwood_actions": 10226
+  },
+  "blockchair": {
+   "source": "blockchair.com keyless API",
+   "indexed_state_at_check": 3584734,
+   "hash_time_txcount_agreement": {
+    "3573972": {
+     "hash": true,
+     "time": true,
+     "tx_count": true
+    },
+    "3575697": {
+     "hash": true,
+     "time": true,
+     "tx_count": true
+    },
+    "3577423": {
+     "hash": true,
+     "time": true,
+     "tx_count": true
+    }
+   },
+   "chainwork_delta": 2866961733310071,
+   "chainwork_span_s": 86418,
+   "avg_solps": 33175515903.053425,
+   "difficulty_samples": {
+    "3573972": 109568831.7616313,
+    "3575697": 102676334.7456693,
+    "3577423": 107278380.4104253
+   },
+   "lockbox_pool_before_zats": 7634887469433,
+   "lockbox_pool_after_zats": 7656462465981,
+   "lockbox_pool_delta_zats": 21574996548,
+   "coinbase_total_page_check": {
+    "checked": 100,
+    "agree": 100,
+    "disagreeing_heights": [],
+    "known_cause": "Blockchair's reward field counts transparent coinbase outputs only; every disagreeing height in the reference window is a shielded-coinbase block, where the consensus identity (subsidy + fees) confirms the zpop total."
+   }
+  }
+ },
+ "evidence": {
+  "dataset_sha256": "b61abb3c37948d01c48e072d88589e41525019989801bda2e37630973dcd4fbd",
+  "dataset_blocks": 3452,
+  "lwd_endpoint": "zec.rocks:443",
+  "lwd_info": {
+   "version": "v0.6.1",
+   "vendor": "ECC LightWalletD",
+   "chain": "main",
+   "height": 3584734,
+   "branch": "77190ad9"
+  }
+ },
+ "prev_receipt": "749a0ee8679e4bf24c9e397b0341bea3dd2a3439839d6d05627de178cc27e9bb",
+ "receipt_sha256": "2ff14965d5ddee14116025f1904746b06c8dd14627d984001e7d7ebee0e7c4c3",
+ "signature": "70b40d403a40e60d14b633e082f02e41a525eefcc90858a6b3fa0d4f2b835624e03f0ad078cfc2edc488acb10cc96b524ca121935a8ee7c8836dc5ca3a5e8908"
+}
