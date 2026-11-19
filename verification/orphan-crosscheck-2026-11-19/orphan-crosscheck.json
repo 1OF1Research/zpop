@@ -1,0 +1,62 @@
+{
+ "gist": "https://gist.github.com/zmanian/ae49ea1bcc3e3793456180606ae80f86",
+ "gist_rows": 243,
+ "canonical_blocks_in_window": 29410,
+ "rows_inside_our_coverage": 243,
+ "winner_hash_matches": 243,
+ "winner_hash_mismatches": 0,
+ "mismatch_heights": [],
+ "raced_heights_with_transparent_winner": 229,
+ "rows_whose_winner_was_shielded_coinbase": 14,
+ "raced_rates_top8": [
+  {
+   "producer": "t1MKn34KBa8Xh4g8qU8psibBXvURafphVn7",
+   "raced": 46,
+   "blocks": 5548,
+   "raced_pct_of_own_blocks": 0.83
+  },
+  {
+   "producer": "t1PEp2GJLSdhDfCKqc2J211WKDUS1NfoQNy",
+   "raced": 42,
+   "blocks": 4471,
+   "raced_pct_of_own_blocks": 0.94
+  },
+  {
+   "producer": "t1SqwRAAdSig6dE4EBPLonAait219VmkUjP",
+   "raced": 41,
+   "blocks": 5117,
+   "raced_pct_of_own_blocks": 0.8
+  },
+  {
+   "producer": "t1SEgZvXCu3ceE42qrq5pCeSq7HbLjX8NJv",
+   "raced": 31,
+   "blocks": 4043,
+   "raced_pct_of_own_blocks": 0.77
+  },
+  {
+   "producer": "t1TVdjqU1APVQmCRRnzbqfjz6wR2qtBnnoc",
+   "raced": 26,
+   "blocks": 3954,
+   "raced_pct_of_own_blocks": 0.66
+  },
+  {
+   "producer": "t1L2b66MXbgpVMXDfUa94GCBFAN4dCxGohM",
+   "raced": 18,
+   "blocks": 1724,
+   "raced_pct_of_own_blocks": 1.04
+  },
+  {
+   "producer": "t1VTjv7XF3hYqxQkxKmHHErvus3bDrbbkGg",
+   "raced": 12,
+   "blocks": 1595,
+   "raced_pct_of_own_blocks": 0.75
+  },
+  {
+   "producer": "t1Y2tYgDJnH4m1uQPDXxvXQSh1Jbun3AP22",
+   "raced": 4,
+   "blocks": 405,
+   "raced_pct_of_own_blocks": 0.99
+  }
+ ],
+ "chain_used": "runs-fixed/window-2026-11-06 + runs3/window-2026-11-07..14 (final verified chain)"
+}

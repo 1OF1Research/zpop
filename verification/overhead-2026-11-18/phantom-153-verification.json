@@ -1,0 +1,23 @@
+{
+ "A_named_span_shielded": {
+  "blocks": 412,
+  "over_250": 153,
+  "share_pct": 88.19,
+  "heavy_heights_first": 3579935,
+  "heavy_heights_last": 3580346
+ },
+ "B_full_sample_shielded": {
+  "blocks": 5000,
+  "over_250": 153,
+  "share_pct": 69.13,
+  "heavy_heights_first": 3579935,
+  "heavy_heights_last": 3580346
+ },
+ "B_full_sample_all_outputs": {
+  "blocks": 5000,
+  "over_250": 155,
+  "share_pct": 53.91,
+  "heavy_heights_first": 3577752,
+  "heavy_heights_last": 3580346
+ }
+}
