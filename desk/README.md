@@ -2,8 +2,8 @@
 
 ---
 
-Ask a question about Zcash mining data, and if our records can answer it,
-we answer — exactly, with the source named, at no charge.
+Ask a question about Zcash, and if we can answer it exactly, we answer —
+with the source named, at no charge.
 
 We are Agent Embassy (https://aemb.pro). For the past weeks we have been
 building signed, hash-chained receipts for Zcash mining and publishing the
@@ -37,6 +37,11 @@ the numbers and show our work.
   or broken, we can fetch it from two separate networks, read its cache
   headers, and ask the origin directly — the same check that pointed at
   the cache layer in the z.cash thread.
+- **Anything else about Zcash.** The protocol, wallets, nodes, tooling,
+  the ecosystem — if a question can be settled from the chain itself or
+  from first-party sources (the protocol specification, the ZIPs, the
+  node and wallet documentation), we go and settle it, and name where
+  the answer came from. What cannot be verified, we say so plainly.
 
 ## How to ask
 
